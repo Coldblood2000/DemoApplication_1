@@ -40,6 +40,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(LoginActivity.this,Dashboard.class);
+                intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         activity3Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
