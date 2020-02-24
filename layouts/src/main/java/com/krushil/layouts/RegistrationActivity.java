@@ -36,7 +36,7 @@ public class RegistrationActivity extends AppCompatActivity {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                CheckValidations();
             }
         });
     }
@@ -54,12 +54,14 @@ public class RegistrationActivity extends AppCompatActivity {
         else if(edtPass.getText().toString().length()<6){
             Toast.makeText(this,bundle.getString("Enter valid password"),Toast.LENGTH_LONG).show();
         }
-        else if(edtPassCon.getText().toString().equals(edtPass.getText().toString())){
+        else if(!edtPassCon.getText().toString().equals(edtPass.getText().toString())){
             Toast.makeText(this,bundle.getString("Entered password is not equal to the above entered password."),Toast.LENGTH_LONG).show();
         }
         else{
             Intent intent=new Intent(RegistrationActivity.this,Dashboard.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setFlags((Intent.FLAG_ACTIVITY_CLEAR_TASK));
+            startActivity(intent);
             finish();
         }
     }
