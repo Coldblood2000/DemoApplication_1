@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         names=new String[]{"Google plus", "Instagram", "Pinterest","Snapchat","Twitter","Whatsapp","Youtube"};
 
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager((MainActivity.this));
-        AppAdapter adapter=new AppAdapter(MainActivity.this, getList(images,names));
+        AppAdapter adapter=new AppAdapter(MainActivity.this, getList(images,names), this);
 
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
