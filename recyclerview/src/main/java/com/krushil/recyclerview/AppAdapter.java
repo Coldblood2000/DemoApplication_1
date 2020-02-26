@@ -1,11 +1,14 @@
 package com.krushil.recyclerview;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -30,9 +33,21 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.AppHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AppHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AppHolder holder, final int position) {
         holder.getName().setText(list.get(position).getName());
         holder.getImage().setImageResource(list.get(position).getImage());
+
+        holder.getName().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle=new Bundle();
+                bundle.putString("info",list.get(position).getName());
+
+                Intent intent=new Intent(context,AppInfo.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
