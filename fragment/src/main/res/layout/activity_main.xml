@@ -10,21 +10,40 @@
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/next_btn"
+        app:layout_constraintBottom_toTopOf="@+id/frag_1_Btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
-        android:id="@+id/next_btn"
+        android:id="@+id/frag_1_Btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="Fragment_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/frag_2_Btn"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/colorAccent"/>
+
+    <Button
+        android:id="@+id/frag_2_Btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Fragment_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/frag_3_Btn"
+        app:layout_constraintStart_toEndOf="@+id/frag_1_Btn"
+        android:background="@color/colorAccent"/>
+
+    <Button
+        android:id="@+id/frag_3_Btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Fragment_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/frag_2_Btn"
+        android:background="@color/colorAccent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
