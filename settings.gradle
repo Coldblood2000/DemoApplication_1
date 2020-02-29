@@ -1,2 +1,2 @@
-include ':app', ':layouts', ':recyclerview', ':materialdesign', ':fragment', ':retrofit'
+include ':app', ':layouts', ':recyclerview', ':materialdesign', ':fragment', ':retrofit', ':localstorage'
 rootProject.name='DemoApp-1'
