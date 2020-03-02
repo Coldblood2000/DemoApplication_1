@@ -46,6 +46,9 @@ public class RegistrationPage extends AppCompatActivity {
         else if(conpass_edt.getText().toString().isEmpty()){
             Toast.makeText(this,"Confirm Password",Toast.LENGTH_SHORT).show();
         }
+        else if(!pass_edt.getText().toString().equals(conpass_edt.getText().toString())){
+            Toast.makeText(this,"Entered Password Not Matching",Toast.LENGTH_SHORT).show();
+        }
         else{
             Bundle bundle=new Bundle();
             bundle.putString("Email",email_edt.getText().toString());

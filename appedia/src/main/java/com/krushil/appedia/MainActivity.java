@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bundle=getIntent().getExtras();
+        bundle=this.getIntent().getExtras();
 
 
         logIn_btn=findViewById(R.id.login_btn_main);
@@ -40,9 +40,7 @@ public class MainActivity extends AppCompatActivity {
         logIn_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //CheckValidation();
-                Intent intent=new Intent(MainActivity.this,AppViewActivity.class);
-                startActivity(intent);
+                CheckValidation();
             }
         });
     }
@@ -54,14 +52,18 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }*/
         if(bundle!=null){
-            if(bundle.get("Email")==user_id_edt.getText().toString()){
+            if((bundle.getString("Email").equals(user_id_edt.getText().toString()) || bundle.getString("Username").equals(user_id_edt.getText().toString())) &&  bundle.getString("Password").equals(password_edt.getText().toString())){
                 Intent intent=new Intent(MainActivity.this,AppViewActivity.class);
-
+                intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                finish();
             }
             else{
                 Toast.makeText(this,"Invalid Account",Toast.LENGTH_LONG).show();
             }
+        }
+        else{
+            Toast.makeText(this,"Invalid Account"+user_id_edt.getText().toString(),Toast.LENGTH_LONG).show();
         }
     }
 }
