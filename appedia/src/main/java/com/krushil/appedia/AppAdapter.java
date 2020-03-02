@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,36 +46,18 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.AppHolder> {
         holder.getName().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle bundle=new Bundle();
+                bundle.putString("info",list.get(position).getName());
+                Intent intent=new Intent(context,AppInfo.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+
                 /*Bundle bundle=new Bundle();
                 bundle.putString("info",list.get(position).getName());
 
                 Intent intent=new Intent(context,AppInfo.class);
                 intent.putExtras(bundle);
                 context.startActivity(intent);*/
-                /*Snackbar snackbar = Snackbar
-                        .make(holder.getLayout() , ""+list.get(position).getName(), Snackbar.LENGTH_LONG);
-
-                snackbar.show();*/
-
-                /*builder=new AlertDialog.Builder(context);
-                builder.setTitle("Logout");
-                builder.setCancelable(false);
-                builder.setMessage("Are you sure?");
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        activity.finish();
-                    }
-                });
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-
-                AlertDialog alertDialog=builder.create();
-                alertDialog.show();*/
 
             }
         });

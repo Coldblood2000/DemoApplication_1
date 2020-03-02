@@ -46,12 +46,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void CheckValidation(){
-        /*if((bundle.getString("Email")==user_id_edt.getText().toString() || bundle.getString("Username")==user_id_edt.getText().toString()) && bundle.getString("Password")==password_edt.getText().toString()){
-            Intent intent=new Intent(MainActivity.this,AppViewActivity.class);
-
-            startActivity(intent);
-        }*/
         if(bundle!=null){
+
             if((bundle.getString("Email").equals(user_id_edt.getText().toString()) || bundle.getString("Username").equals(user_id_edt.getText().toString())) &&  bundle.getString("Password").equals(password_edt.getText().toString())){
                 Intent intent=new Intent(MainActivity.this,AppViewActivity.class);
                 intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -63,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else{
-            Toast.makeText(this,"Invalid Account"+user_id_edt.getText().toString(),Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Invalid Account",Toast.LENGTH_LONG).show();
         }
     }
 }
