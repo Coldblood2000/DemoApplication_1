@@ -1,2 +1,2 @@
-include ':app', ':layouts', ':recyclerview', ':materialdesign', ':fragment', ':retrofit', ':localstorage'
+include ':app', ':layouts', ':recyclerview', ':materialdesign', ':fragment', ':retrofit', ':localstorage', ':appedia'
 rootProject.name='DemoApp-1'
